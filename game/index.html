@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>컬러 스위퍼 스도쿠</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <h1>컬러 스위퍼 스도쿠</h1>
+    <div class="difficulty-buttons">
+      <button class="difficulty-btn" data-difficulty="easy">쉬움</button>
+      <button class="difficulty-btn" data-difficulty="medium">중급</button>
+      <button class="difficulty-btn" data-difficulty="hard">고급</button>
+    </div>
+  </header>
+
+  <section class="rule-bar">
+    <span id="rule-display">현재 난이도: -</span>
+    <span id="status-display">-</span>
+    <span id="timer-display">00:00</span>
+    <span id="chances-display">기회 -</span>
+  </section>
+
+  <main class="game-area">
+    <div id="game-board" class="game-board"></div>
+    <div id="bomb-overlay" class="bomb-overlay"></div>
+    <div id="status-banner" class="status-banner"></div>
+  </main>
+
+  <section id="color-palette" class="color-palette"></section>
+
+  <footer class="bottom-bar">
+    <button id="restart-btn">다시 시작</button>
+    <label><input type="checkbox" id="mute-toggle" /> 음소거</label>
+    <label><input type="checkbox" id="reduced-motion-toggle" /> 움직임 줄이기</label>
+    <div id="best-times-display" class="best-times"></div>
+  </footer>
+
+  <script src="js/difficulty-config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/clue-engine.js"></script>
+  <script src="js/board-generator.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/ui-render.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
