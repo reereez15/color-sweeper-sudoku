@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>컬러 스위퍼 스도쿠</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section id="start-screen" class="start-screen">
+    <h1>컬러 스위퍼 스도쿠</h1>
+    <p class="start-desc">
+      칸 안 숫자는 인접 8칸 중 같은 색 개수, 가장자리 숫자는 그 행/열에 색이 총 몇 개인지를 알려줍니다.
+      팔레트에서 색을 골라 빈 칸을 채워보세요.
+    </p>
+    <div class="start-difficulty-buttons">
+      <button class="start-diff-btn" data-difficulty="easy">
+        <strong>쉬움</strong><span>6×6 · 색 3개</span>
+      </button>
+      <button class="start-diff-btn" data-difficulty="medium">
+        <strong>중급</strong><span>9×9 · 색 3개</span>
+      </button>
+      <button class="start-diff-btn" data-difficulty="hard">
+        <strong>고급</strong><span>10×10 · 색 3개</span>
+      </button>
+    </div>
+    <div id="start-best-times" class="best-times"></div>
+
+    <section class="records-panel">
+      <div class="records-header">
+        <h2>최근 기록</h2>
+        <button id="clear-records-btn">기록 초기화</button>
+      </div>
+      <table class="records-table">
+        <thead>
+          <tr>
+            <th>시각</th>
+            <th>난이도</th>
+            <th>결과</th>
+            <th>걸린 시간</th>
+            <th>사용 기회</th>
+            <th>기록 당시 기회값</th>
+          </tr>
+        </thead>
+        <tbody id="records-tbody"></tbody>
+      </table>
+      <p id="records-empty" class="records-empty hidden">아직 기록이 없습니다. 판을 플레이해보세요.</p>
+    </section>
+  </section>
+
+  <div id="game-screen" class="game-screen hidden">
+    <header class="top-bar">
+      <h1>컬러 스위퍼 스도쿠</h1>
+      <button id="back-to-start-btn">처음 화면으로</button>
+    </header>
+
+    <section class="rule-bar">
+      <span id="rule-display">현재 난이도: -</span>
+      <span id="status-display">-</span>
+      <span id="timer-display">00:00</span>
+      <span id="chances-display">기회 -</span>
+    </section>
+
+    <main class="game-area">
+      <div id="game-board" class="game-board"></div>
+      <div id="bomb-overlay" class="bomb-overlay"></div>
+      <div id="status-banner" class="status-banner"></div>
+    </main>
+
+    <section id="color-palette" class="color-palette"></section>
+
+    <footer class="bottom-bar">
+      <button id="restart-btn">다시 시작</button>
+      <label><input type="checkbox" id="mute-toggle" /> 음소거</label>
+      <label><input type="checkbox" id="reduced-motion-toggle" /> 움직임 줄이기</label>
+      <div id="best-times-display" class="best-times"></div>
+    </footer>
+  </div>
+
+  <script src="js/difficulty-config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/clue-engine.js"></script>
+  <script src="js/board-generator.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/ui-render.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
